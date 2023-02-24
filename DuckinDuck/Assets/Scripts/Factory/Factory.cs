@@ -1,21 +1,35 @@
-using GSGD1;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using GSGD1;
 
 public class Factory : MonoBehaviour
 {
-    [SerializeField] private Ressource ressourceAimed = Ressource.None;
-    [SerializeField] private float productionTime = 0f;
-    [SerializeField] private int amountProduced = 0;
-    private Ressource _ressourceProduced = Ressource.None;
-    private Timer _timer = null;
+    [SerializeField] private FactoryScriptableObject factorySettings;
     
+    private string name = String.Empty;
+    private Ressource ressourceProduced = Ressource.None;
+    private float productionTime = 0;
+    private int amountProduced = 0;
+    private Timer _timer = null;
+    private Sprite sprite = null;
+
+    private void OnEnable()
+    {
+        name = factorySettings.name;
+        ressourceProduced = factorySettings.ressource;
+        productionTime = factorySettings.productionTimer;
+        amountProduced = factorySettings.productionAmount;
+        sprite = factorySettings.menuImage;
+    }
+
     private void Start()
     {
-        if (ressourceAimed != Ressource.None)
+        if (ressourceProduced != Ressource.None)
         {
             _timer = new Timer(productionTime, false);
             _timer.OnEndCallback += HandleEndCallback;
-            _ressourceProduced = ressourceAimed;
             _timer.Start();
         }
 
@@ -34,6 +48,31 @@ public class Factory : MonoBehaviour
 
     private void HandleEndCallback()
     {
-        GameManager.Instance.IncrementRessource(_ressourceProduced, amountProduced);
+        GameManager.Instance.IncrementRessource(ressourceProduced, amountProduced);
     }
+
+    #region RandomBullshitMethod
+    public void UpdateProductionTime(float duration)
+    {
+        _timer.Stop();
+        _timer = new Timer(duration, false);
+        _timer.Start();
+    }
+
+    
+    public float GetProductionTime()
+    {
+        return _timer.Duration;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public Sprite GetSprite()
+    {
+        return sprite;
+    }
+    #endregion
 }
