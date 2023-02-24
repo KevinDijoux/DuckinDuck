@@ -8,11 +8,15 @@ public enum Ressource
     Monnaie,
     Couronne,
     Majordome,
-    Fame
+    Fame,
+    None
 }
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private UIManager _uiManager;
+
+    public UIManager UIManager => _uiManager;
 
     public static GameManager _instance = null;
     public static bool HasInstance => _instance != null;
