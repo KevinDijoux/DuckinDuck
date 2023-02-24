@@ -8,7 +8,7 @@ public class FactoryDeprecated : MonoBehaviour
     [SerializeField] private float productionTime = 0f;
     [SerializeField] private int amountProduced = 0;
     private Ressource _ressourceProduced = Ressource.None;
-    private Timer _timer = null;
+    private Timer _timer;
     
     private void Start()
     {

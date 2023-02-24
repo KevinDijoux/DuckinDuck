@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using GSGD1;
 
@@ -52,19 +50,28 @@ public class Factory : MonoBehaviour
     }
 
     #region RandomBullshitMethod
-    public void UpdateProductionTime(float duration)
+    public void SetProductionTime(float duration)
     {
         _timer.Stop();
         _timer = new Timer(duration, false);
         _timer.Start();
     }
-
     
     public float GetProductionTime()
     {
         return _timer.Duration;
     }
 
+    public int GetProductionAmount()
+    {
+        return amountProduced;
+    }
+
+    public void SetProductionAmount(int amount)
+    {
+        amountProduced = amount;
+    }
+    
     public string GetName()
     {
         return name;
