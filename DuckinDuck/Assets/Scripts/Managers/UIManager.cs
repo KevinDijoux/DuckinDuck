@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -10,8 +11,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _majordomeText;
     [SerializeField] private TextMeshProUGUI _fameText;
 
+    [SerializeField] private GameObject _interface;
+
     public void Start()
     {
+        _interface.SetActive(false);    
+
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
         {
@@ -27,10 +32,13 @@ public class UIManager : MonoBehaviour
         _fameText.text = _fame.ToString();
     }
 
-    public void Increase()
+    public void OpenHUD()
     {
-        int n = (int) Random.Range(1, 100);
+        _interface.SetActive(true);
+    }
 
-        UpdateUI(n + n, n + n * n, n * n, n + n);
+    public void CloseHUD()
+    {
+        _interface.SetActive(false);
     }
 }
