@@ -101,9 +101,6 @@ public class GameManager : MonoBehaviour
         _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
     }
 
-    /// <summary>
-    /// Basically debug purpose
-    /// </summary>
     private void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
