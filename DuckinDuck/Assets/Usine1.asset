@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Usine1
   ressource: 2
   productionAmount: 5
-  productionTimer: 2
+  productionTimer: 3
   model: {fileID: -4540811896925794542, guid: abacd1ad42d55af40958345296ec07a8, type: 3}
   menuImage: {fileID: 0}

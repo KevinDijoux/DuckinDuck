@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b506f8b7ee90464881ab8c7c396f1e2, type: 3}
   m_Name: Auberge
   m_EditorClassIdentifier: 
-  name: Usine1
+  name: Auberge
   ressource: 1
   productionAmount: 5
-  productionTimer: 2
   model: {fileID: -4540811896925794542, guid: abacd1ad42d55af40958345296ec07a8, type: 3}
   menuImage: {fileID: 0}
+  productionTimer: 2
