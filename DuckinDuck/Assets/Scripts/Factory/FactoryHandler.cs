@@ -5,25 +5,12 @@ using UnityEngine;
 
 public class FactoryHandler : MonoBehaviour
 {
-    [SerializeField] private Factory2Deprecated auberge;
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.A))
-        {
-            auberge.GetProductionAmount();
-        }
-    }
-
-
     /*
     [SerializeField] private GameObject contentBox;
     [SerializeField] private ShopPanel panelPrefab;
     [SerializeField] private List<ShopPanel> panelList;
     [SerializeField] private List<Factory> factoryList;
     
-    
-
     public void CallMenu()
     {
         

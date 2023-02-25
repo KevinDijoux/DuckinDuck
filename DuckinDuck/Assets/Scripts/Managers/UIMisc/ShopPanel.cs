@@ -1,21 +1,22 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class ShopPanel : MonoBehaviour
 {
 
     [SerializeField] private Image sprite = null;
-    [SerializeField] private TextMeshProUGUI amountProduced;
-    [SerializeField] private FactoryScriptableObject _factory;
-    private void Start()
+    [SerializeField] private TextMeshProUGUI name;
+    [SerializeField] private TextMeshProUGUI quantity;
+    [SerializeField] private TextMeshProUGUI ressource;
+    [SerializeField] private FactoryBase _factory;
+    private void OnEnable()
     {
-        sprite = _factory.menuImage;
-        amountProduced.text = String.Format("{0} /5s", _factory.productionAmount);
+        name.text = _factory.GetName();
+        sprite = _factory.GetImage();
+        ressource.text = _factory.GetRessource().ToString();
+        quantity.text = String.Format("{0} /s", _factory.GetQuantity().ToString());
     }
 
     public void DestroyPanel()

@@ -1,7 +1,7 @@
 using GSGD1;
 using UnityEngine;
 
-[System.Obsolete("This class is obsolete, use FactoryScriptableObject and Factory combo instead!")]
+[System.Obsolete("This class is obsolete, create a new class that inherit from FactoryBase instead !")]
 public class FactoryDeprecated : MonoBehaviour
 {
     [SerializeField] private Ressource ressourceAimed = Ressource.None;

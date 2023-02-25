@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b506f8b7ee90464881ab8c7c396f1e2, type: 3}
   m_Name: Banque
   m_EditorClassIdentifier: 
-  name: Banque
+  name: BanqueUHH
   ressource: 0
   productionAmount: 5
-  productionTimer: 2
+  recipeTime: 1
   _prefab: {fileID: -6794921149442577429, guid: 5e18b563c9985eb40ae5b254b38ca036, type: 3}
+  level: 1
   menuImage: {fileID: 0}
+  isSupposeToWork: 1

@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Selector : MonoBehaviour
 {
+    /*
     public GameObject towerHUD;
     public GameObject usineHUD;
     [SerializeField] LayerMask interactibleLayer;
@@ -56,4 +57,5 @@ public class Selector : MonoBehaviour
             isMouseOnUI = false;
         }
     }
+    */
 }

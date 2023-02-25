@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Auberge
   ressource: 2
-  productionAmount: 5
-  productionTimer: 2
+  productionAmount: 3
+  recipeTime: 1
   _prefab: {fileID: -6794921149442577429, guid: 133917ecbdce80046b9f9e517ca29b32, type: 3}
-  level: 10
+  level: 25
   menuImage: {fileID: 0}
+  isSupposeToWork: 1

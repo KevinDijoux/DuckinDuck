@@ -13,31 +13,35 @@ public class FactoryBase : MonoBehaviour, IFactory
     public Image factorySprite { get; set; }
     public int level { get; set; }
     public Timer timer { get; set; }
-    
+
+    protected bool isWorking = true;
+
     [SerializeField] public FactoryScriptableObject assets;
     
-    public void OnEnable()
+    protected virtual void Start()
     {
         factoryName = assets.name;
         ressource = assets.ressource;
-        cooldown = assets.productionTimer;
+        cooldown = assets.recipeTime;
         quantity = assets.productionAmount;
         factorySprite = assets.menuImage;
         level = assets.level;
 
-        if (ressource != Ressource.None)
+        if (isWorking)
         {
-            GameManager.Instance.AddFactory(this);
-            timer = new Timer(cooldown, false);
-            timer.OnEndCallback += HandleEndCallback;
-            timer.Start();
+            if (ressource != Ressource.None)
+            {
+                GameManager.Instance.AddFactory(this);
+                timer = new Timer(cooldown, false);
+                timer.OnEndCallback += HandleEndCallback;
+                timer.Start();
+            }
+            else
+            {
+                Debug.Log("No ressource were set, aborting factory : " + this);
+                gameObject.SetActive(false);
+            }
         }
-        else
-        {
-            Debug.Log("No ressource were set, aborting factory : " + this);
-            gameObject.SetActive(false);
-        }
-        
     }
 
     private void Update()
@@ -80,6 +84,7 @@ public class FactoryBase : MonoBehaviour, IFactory
         return level;
     }
     
+
     private int GetProductionAmount()
     {
         return Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(quantity, level)));

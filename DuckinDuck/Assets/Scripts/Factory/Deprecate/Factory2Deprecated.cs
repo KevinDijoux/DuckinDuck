@@ -4,6 +4,7 @@ using GSGD1;
 using Interfaces;
 using UnityEngine.UI;
 
+[System.Obsolete("This class is obsolete, create a new class that inherit from FactoryBase instead !")]
 public class Factory2Deprecated : MonoBehaviour
 {
     [SerializeField] private FactoryScriptableObject factorySettings;
@@ -20,7 +21,7 @@ public class Factory2Deprecated : MonoBehaviour
     {
         name = factorySettings.name;
         ressourceProduced = factorySettings.ressource;
-        productionTime = factorySettings.productionTimer;
+        productionTime = factorySettings.recipeTime;
         amountProduced = factorySettings.productionAmount;
         sprite = factorySettings.menuImage;
         level = factorySettings.level;

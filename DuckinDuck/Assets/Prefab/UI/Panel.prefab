@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 565201743967071671}
-  - component: {fileID: -686675018852344131}
+  - component: {fileID: 3602037192008117109}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -41,7 +41,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &-686675018852344131
+--- !u!114 &3602037192008117109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,10 +54,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 3421551559620755245}
-  factoryName: {fileID: 7661679938952375415}
+  name: {fileID: 7661679938952375415}
+  quantity: {fileID: 312141403543854027}
   ressource: {fileID: 1914066552643944954}
-  amountProduced: {fileID: 312141403543854027}
-  level: {fileID: 0}
+  _factory: {fileID: 0}
 --- !u!1 &4000367088534948010
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,12 +20,10 @@ namespace Interfaces
         int GetQuantity();
         Image GetImage();
         int GetLevel();
-
-        void OnEnable();
         
         string SetName(string name);
         Ressource SetRessource(Ressource ressource);
-        [System.Obsolete("Avoid, it has been decided balance would be around a cooldown of 5 seconds")]
+        [System.Obsolete("Avoid, it has been decided balance would be around a cooldown of 1 seconds")]
         float SetCooldown(float cooldown);
         int SetQuantity(int quantity);
         Image SetImage(Image image);
