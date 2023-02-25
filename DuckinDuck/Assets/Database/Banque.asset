@@ -17,4 +17,5 @@ MonoBehaviour:
   productionAmount: 5
   productionTimer: 2
   _prefab: {fileID: 0}
+  level: 10
   menuImage: {fileID: 0}

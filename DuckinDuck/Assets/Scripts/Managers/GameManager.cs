@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Interfaces;
 using UnityEngine;
 
 public enum Ressource
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private FactoryHandler _factoryHandler;
-
+    
     public UIManager UIManager => _uiManager;
 
     public static GameManager _instance = null;
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
     private int Majordome = 0;
     private int Fame = 0;
 
-    private List<Factory> factoryList = new List<Factory>();
+    private List<FactoryBase> factoryList = new List<FactoryBase>();
 
     
     public void IncrementRessource(Ressource resource, int amount)
@@ -81,17 +82,17 @@ public class GameManager : MonoBehaviour
         _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
     }
 
-    public void AddFactory(Factory factory)
+    public void AddFactory(FactoryBase factory)
     {
         factoryList.Add(factory);
     }
 
-    public Factory GetFactoryByIndex(int index)
+    public FactoryBase GetFactoryByIndex(int index)
     {
         return factoryList[index];
     }
 
-    public List<Factory> GetFullFactoryList()
+    public List<FactoryBase> GetFullFactoryList()
     {
         return factoryList;
     }
@@ -99,17 +100,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
-    }
-
-    /// <summary>
-    /// Basically debug purpose
-    /// </summary>
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
+        /*
+        for (int i = 1; i < 11; i++)
         {
-            _factoryHandler.CallMenu();
+            Debug.Log(Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(5, i))));
         }
+        */
     }
+    
+    
+
 }
 
