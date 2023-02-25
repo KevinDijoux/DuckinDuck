@@ -26,6 +26,7 @@ public class Factory : MonoBehaviour
     {
         if (ressourceProduced != Ressource.None)
         {
+            GameManager.Instance.AddFactory(this);
             _timer = new Timer(productionTime, false);
             _timer.OnEndCallback += HandleEndCallback;
             _timer.Start();

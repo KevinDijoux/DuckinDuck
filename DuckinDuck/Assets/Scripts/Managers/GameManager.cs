@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum Ressource
@@ -12,6 +13,7 @@ public enum Ressource
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager _uiManager;
+    [SerializeField] private FactoryHandler _factoryHandler;
 
     public UIManager UIManager => _uiManager;
 
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
     private int Couronne = 0;
     private int Majordome = 0;
     private int Fame = 0;
+
+    private List<Factory> factoryList = new List<Factory>();
 
     
     public void IncrementRessource(Ressource resource, int amount)
@@ -91,6 +95,20 @@ public class GameManager : MonoBehaviour
         return 0;
     }
 
+    public void AddFactory(Factory factory)
+    {
+        factoryList.Add(factory);
+    }
+
+    public Factory GetFactoryByIndex(int index)
+    {
+        return factoryList[index];
+    }
+
+    public List<Factory> GetFullFactoryList()
+    {
+        return factoryList;
+    }
 
     /// <summary>
     /// Basically debug purpose
@@ -103,6 +121,11 @@ public class GameManager : MonoBehaviour
             print("Couronne : " + Couronne.ToString());
             print("Majordome : " + Majordome.ToString());
             print("Fame : " + Fame.ToString());
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            _factoryHandler.CallMenu();
         }
     }
 }
