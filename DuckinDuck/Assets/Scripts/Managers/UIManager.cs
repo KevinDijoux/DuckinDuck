@@ -26,10 +26,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI(int _monnaie, int _couronne, int _majordome, int _fame)
     {
-        _monnaieText.text = _monnaie.ToString();
-        _couronneText.text = _couronne.ToString();
-        _majordomeText.text = _majordome.ToString();
-        _fameText.text = _fame.ToString();
+        //_monnaieText.text = _monnaie.ToString();
+        //_couronneText.text = _couronne.ToString();
+        //_majordomeText.text = _majordome.ToString();
+        //_fameText.text = _fame.ToString();
     }
 
     public void OpenHUD()
