@@ -20,4 +20,9 @@ public class ShopPanel : MonoBehaviour
         ressource.text = ressourceToSet;
         amountProduced.text = amountToSet.ToString();
     }
+
+    public void DestroyPanel()
+    {
+        Destroy(gameObject);
+    }
 }

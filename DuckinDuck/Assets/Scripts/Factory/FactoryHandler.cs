@@ -8,9 +8,11 @@ public class FactoryHandler : MonoBehaviour
     [SerializeField] private ShopPanel panelPrefab;
     
     private List<Factory> factoryList = new List<Factory>();
+    private List<ShopPanel> panelList = new List<ShopPanel>();
 
     public void CallMenu()
     {
+        CleanMenu();
         factoryList.Clear();
         factoryList = new List<Factory>(GameManager.Instance.GetFullFactoryList());
         for (int i = 0; i < factoryList.Count; i++)
@@ -22,8 +24,20 @@ public class FactoryHandler : MonoBehaviour
                 tempFactory.GetName(), 
                 tempFactory.GetRessource().ToString(), 
                 tempFactory.GetProductionAmount());
+            panelList.Add(panel);
         }
         Debug.Log(factoryList.Count);
     }
 
+    private void CleanMenu()
+    {
+        if (panelList.Count > 0)
+        {
+            for (int i = 0; i < panelList.Count; i++)
+            {
+                panelList[i].DestroyPanel();
+            }
+            panelList.Clear();
+        }
+    }
 }
