@@ -15,8 +15,7 @@ public class UIManager : MonoBehaviour
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
         {
-            Debug.LogError("Missing reference");
-            
+            Debug.LogWarning("Missing reference");
         }
     }
 
