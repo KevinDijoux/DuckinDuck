@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using GSGD1;
+using UnityEngine.UI;
 
 public class Factory : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Factory : MonoBehaviour
     private float productionTime = 0;
     private int amountProduced = 0;
     private Timer _timer = null;
-    private Sprite sprite = null;
+    private Image sprite = null;
 
     private void OnEnable()
     {
@@ -78,9 +79,14 @@ public class Factory : MonoBehaviour
         return name;
     }
 
-    public Sprite GetSprite()
+    public Image GetSprite()
     {
         return sprite;
+    }
+
+    public Ressource GetRessource()
+    {
+        return ressourceProduced;
     }
     #endregion
 }

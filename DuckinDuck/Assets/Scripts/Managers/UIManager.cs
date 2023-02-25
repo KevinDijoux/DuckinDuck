@@ -5,17 +5,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI _monnaieText;
-
-    [SerializeField]
-    private TextMeshProUGUI _couronneText;
-
-    [SerializeField]
-    private TextMeshProUGUI _majordomeText;
-
-    [SerializeField]
-    private TextMeshProUGUI _fameText;
+    [SerializeField] private TextMeshProUGUI _monnaieText;
+    [SerializeField] private TextMeshProUGUI _couronneText;
+    [SerializeField] private TextMeshProUGUI _majordomeText;
+    [SerializeField] private TextMeshProUGUI _fameText;
 
     public void Start()
     {

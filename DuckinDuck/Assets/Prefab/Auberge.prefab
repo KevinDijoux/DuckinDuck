@@ -386,6 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196164989604916966}
+  - component: {fileID: -6794921149442577429}
   m_Layer: 0
   m_Name: Auberge
   m_TagString: Untagged
@@ -409,6 +410,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6794921149442577429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564703213355973009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7755afa936020cb4d9d44bd6b2025bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factorySettings: {fileID: 11400000, guid: 62f8163c86c87d448adcf62e5dbcaf5d, type: 2}
 --- !u!1001 &3888971417611411016
 PrefabInstance:
   m_ObjectHideFlags: 0
