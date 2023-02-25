@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public enum Ressource
@@ -93,6 +90,20 @@ public class GameManager : MonoBehaviour
 
         return 0;
     }
-    
+
+
+    /// <summary>
+    /// Basically debug purpose
+    /// </summary>
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            print("Monnaie : " + Monnaie.ToString());
+            print("Couronne : " + Couronne.ToString());
+            print("Majordome : " + Majordome.ToString());
+            print("Fame : " + Fame.ToString());
+        }
+    }
 }
 
