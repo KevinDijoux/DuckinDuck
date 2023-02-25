@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,28 +72,13 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        UpdateUI(resource);
+        UpdateUI();
 
     }
 
-    public int UpdateUI(Ressource ressource)
+    public void UpdateUI()
     {
-        switch (ressource)
-        {
-            case Ressource.Monnaie:
-                return Monnaie;
-                
-            case Ressource.Couronne:
-                return Couronne;
-                
-            case Ressource.Majordome:
-                return Majordome;
-                
-            case Ressource.Fame:
-                return Fame;
-        }
-
-        return 0;
+        _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
     }
 
     public void AddFactory(Factory factory)
@@ -108,6 +94,11 @@ public class GameManager : MonoBehaviour
     public List<Factory> GetFullFactoryList()
     {
         return factoryList;
+    }
+
+    private void Start()
+    {
+        _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
     }
 
     /// <summary>
