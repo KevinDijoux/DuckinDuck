@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b506f8b7ee90464881ab8c7c396f1e2, type: 3}
+  m_Name: Usine1
+  m_EditorClassIdentifier: 
+  name: Usine1
+  ressource: 2
+  productionAmount: 5
+  productionTimer: 2
+  model: {fileID: -4540811896925794542, guid: abacd1ad42d55af40958345296ec07a8, type: 3}
+  menuImage: {fileID: 0}

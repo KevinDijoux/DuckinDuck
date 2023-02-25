@@ -20,9 +20,10 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         // Debug to verify if theres not missing references
-        if (_couronneText == null || _majordomeText == null || _fameText)
+        if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
         {
             Debug.LogError("Missing reference");
+            
         }
     }
 
@@ -32,5 +33,12 @@ public class UIManager : MonoBehaviour
         _couronneText.text = _couronne.ToString();
         _majordomeText.text = _majordome.ToString();
         _fameText.text = _fame.ToString();
+    }
+
+    public void Increase()
+    {
+        int n = (int) Random.Range(1, 100);
+
+        UpdateUI(n + n, n + n * n, n * n, n + n);
     }
 }
