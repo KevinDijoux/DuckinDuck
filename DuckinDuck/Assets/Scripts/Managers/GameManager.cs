@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     private int Majordome = 0;
     private int Fame = 0;
 
-    private List<Factory> factoryList = new List<Factory>();
+    private List<FactoryBase> factoryList = new List<FactoryBase>();
 
     
     public void IncrementRessource(Ressource resource, int amount)
@@ -81,17 +81,17 @@ public class GameManager : MonoBehaviour
         _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
     }
 
-    public void AddFactory(Factory factory)
+    public void AddFactory(FactoryBase factory)
     {
         factoryList.Add(factory);
     }
 
-    public Factory GetFactoryByIndex(int index)
+    public FactoryBase GetFactoryByIndex(int index)
     {
         return factoryList[index];
     }
 
-    public List<Factory> GetFullFactoryList()
+    public List<FactoryBase> GetFullFactoryList()
     {
         return factoryList;
     }
@@ -99,14 +99,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            _factoryHandler.CallMenu();
-        }
     }
 }
 
