@@ -106,14 +106,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            print("Monnaie : " + Monnaie.ToString());
-            print("Couronne : " + Couronne.ToString());
-            print("Majordome : " + Majordome.ToString());
-            print("Fame : " + Fame.ToString());
-        }
-
         if (Input.GetKey(KeyCode.UpArrow))
         {
             _factoryHandler.CallMenu();
