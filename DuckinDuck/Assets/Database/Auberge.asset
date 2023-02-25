@@ -17,4 +17,5 @@ MonoBehaviour:
   productionAmount: 5
   productionTimer: 2
   _prefab: {fileID: -6794921149442577429, guid: 133917ecbdce80046b9f9e517ca29b32, type: 3}
+  level: 10
   menuImage: {fileID: 0}
