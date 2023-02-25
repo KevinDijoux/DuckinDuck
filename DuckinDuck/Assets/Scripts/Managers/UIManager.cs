@@ -13,9 +13,18 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject _interface;
 
+    private GameObject _factory;
+    public GameObject Factory => _factory;
+
+    private GameObject _location;
+    public GameObject Location => _location;
+
+    private Transform _anchor;
+    public Transform Anchor => _anchor;
+
     public void Start()
     {
-        _interface.SetActive(false);    
+        _interface.SetActive(false);
 
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
@@ -40,5 +49,34 @@ public class UIManager : MonoBehaviour
     public void CloseHUD()
     {
         _interface.SetActive(false);
+    }
+
+    public void SetLocation(GameObject location)
+    {
+        _location = location;
+    }
+
+    public void SetAnchor(Transform anchor)
+    {
+        _anchor = anchor;
+    }
+
+    public void ChooseFactory(GameObject factory)
+    {
+        _factory = factory;
+        CreateFactory();
+    }
+
+    public void CreateFactory()
+    {
+        Instantiate(_factory, _anchor);
+        DeleteLocation();
+    }
+
+    public void DeleteLocation()
+    {
+        CloseHUD();
+        _location.GetComponent<MeshRenderer>().enabled = false;
+        _location.GetComponent<MeshCollider>().enabled = false;
     }
 }
