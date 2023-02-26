@@ -503,6 +503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196164989604916966}
   - component: {fileID: 3129768757313505467}
+  - component: {fileID: 7516000919805422655}
   m_Layer: 0
   m_Name: Auberge
   m_TagString: Untagged
@@ -539,7 +540,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assets: {fileID: 11400000, guid: 62f8163c86c87d448adcf62e5dbcaf5d, type: 2}
+  Spawner: {fileID: 7516000919805422655}
   isSupposeToWork: 1
+--- !u!114 &7516000919805422655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564703213355973009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacf5e3a62793fe48889fbc74eb89070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: {fileID: 0}
+  _duckPrefab: {fileID: -6581557737927204797, guid: fdf9ad1b6a4ca484a82215a9b9a05181, type: 3}
+  timer:
+    _duration: 5
+    _stopWhenCompleted: 0
 --- !u!1001 &9219819504487164456
 PrefabInstance:
   m_ObjectHideFlags: 0
