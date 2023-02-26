@@ -6,7 +6,7 @@ using UnityEngine;
 public class DuckSpawner : MonoBehaviour
 {
 	[SerializeField]
-	public Path _path;
+	public Path path;
 
 	[SerializeField]
 	private DuckFollower _duckPrefab;
@@ -16,9 +16,9 @@ public class DuckSpawner : MonoBehaviour
 
 	private void Start()
 	{
-		if (_path == null)
+		if (path == null)
 		{
-			Debug.LogError("No path holder found on " + gameObject.name);
+			Debug.LogError("No path found on " + gameObject.name);
 		}
 		timer.OnEndCallback += HandleEndCallback;
 		timer.Start();
@@ -34,7 +34,7 @@ public class DuckSpawner : MonoBehaviour
 		if (_duckPrefab != null) 
 		{ 
 			DuckFollower duck = Instantiate(_duckPrefab, transform.position, Quaternion.identity);
-			duck.SetPath(_path);
+			duck.SetPath(path);
 			timer.Start();
 		}
 	}
