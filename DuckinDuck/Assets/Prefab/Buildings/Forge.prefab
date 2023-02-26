@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacf5e3a62793fe48889fbc74eb89070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _path: {fileID: 0}
-  _duckPrefab: {fileID: 8235821027121117919, guid: 632111a45266042478b60ca43288fcf0, type: 3}
+  path: {fileID: 0}
+  _duckPrefab: {fileID: 1651025710845057503, guid: d6dc70278c63ebc41bb74e183e720128, type: 3}
   timer:
     _duration: 5
     _stopWhenCompleted: 0
