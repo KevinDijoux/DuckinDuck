@@ -2,6 +2,7 @@ using Factory.FactoryType;
 using Interfaces;
 using System;
 using System.Collections.Generic;
+using GSGD1;
 using UnityEngine;
 
 public enum Ressource
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private FactoryHandler _factoryHandler;
+    private Timer fameTimer;
+
 
     public UIManager UIManager => _uiManager;
 
@@ -181,7 +184,21 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _uiManager.UpdateUI(Monnaie, Couronne, Majordome, Fame);
+        UpdateUI();
+        fameTimer = new Timer(3, false);
+        fameTimer.OnEndCallback += HandleEndCallback;
+        fameTimer.Start();
+    }
+
+    private void HandleEndCallback()
+    {
+        Fame = Mathf.CeilToInt(((Couronne*2)+(Monnaie)+(Majordome*3))/100);
+        UpdateUI();
+    }
+
+    private void Update()
+    {
+        fameTimer.Update();
     }
 }
 
