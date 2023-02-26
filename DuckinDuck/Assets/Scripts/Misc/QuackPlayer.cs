@@ -7,14 +7,19 @@ using UnityEngine;
 public class QuackPlayer : MonoBehaviour
 {
 	[SerializeField]
-	private List<AudioSource> audioSources = new List<AudioSource>();
+	private List<AudioClip> audioClip = new List<AudioClip>();
 
 	[SerializeField]
-	private Timer timer = new Timer(5f, true);
+	private AudioSource audioSource;
+
+	[SerializeField]
+	private Timer timer = new Timer(2f, true);
+
 	public void PlayQuack()
 	{
-		int index = Random.Range(0, audioSources.Count);
-		audioSources[index].Play();
+		int index = Random.Range(0, audioClip.Count);
+		audioSource.clip = audioClip[index];
+		audioSource.Play();
 	}
 
 	private void Start()
@@ -31,7 +36,7 @@ public class QuackPlayer : MonoBehaviour
 	private void HandleEndCallback()
 	{
 		PlayQuack();
-		timer = new Timer(Random.Range(1, 7));
+		timer = new Timer(Random.Range(1, 5));
 		timer.Start();
 	}
 }
