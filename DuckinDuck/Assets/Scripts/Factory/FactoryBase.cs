@@ -44,6 +44,25 @@ public class FactoryBase : MonoBehaviour, IFactory
         }
     }
 
+    public void TryUpgrading()
+    {
+        int price = Mathf.CeilToInt(Mathf.Pow(quantity, 2));
+        int stock = GameManager.Instance.GetRessource(ressource);
+        if (stock >= price)
+        {
+            IncrementLevel();
+        }
+        else
+        {
+            throw new Exception(String.Format(
+                "You don't have enough {0}, your stock is {1} and price is {2}",
+                ressource.ToString(),
+                stock,
+                price));
+        }
+        
+    }
+
     private void Update()
     {
         timer.Update();

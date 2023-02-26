@@ -17,6 +17,7 @@ public class ShopPanel : MonoBehaviour
         sprite = _factory.GetImage();
         ressource.text = _factory.GetRessource().ToString();
         quantity.text = String.Format("{0} /s", _factory.GetQuantity().ToString());
+
     }
 
     public void DestroyPanel()

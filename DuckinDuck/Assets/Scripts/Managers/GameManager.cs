@@ -73,7 +73,26 @@ public class GameManager : MonoBehaviour
         }
 
         UpdateUI();
+    }
+    
+    public int GetRessource(Ressource resource)
+    {
+        switch (resource)
+        {
+            case Ressource.Monnaie:
+                return Monnaie;
 
+            case Ressource.Couronne:
+                return Couronne;
+                
+            case Ressource.Majordome:
+                return Majordome;
+
+            case Ressource.Fame:
+                return Fame;
+        }
+
+        throw new Exception("No valid ressource were given !");
     }
 
     public void UpdateUI()
