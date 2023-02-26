@@ -95,18 +95,21 @@ public class UIManager : MonoBehaviour
     public void ChooseFactory(FactoryBase factory)
     {
         _factory = factory;
-        CreateFactory();
+        CreateFactory(_factory.GetFactoryType());
     }
 
-    public void CreateFactory()
+    public void CreateFactory(FactoryTypeList type)
     {
-        Instantiate(_factory, _anchor);
-        if (_location.GetComponent<PathHolder>())
+        if (GameManager.Instance.CanAfford(type))
         {
-            print(_location.GetComponent<PathHolder>().path);
+            Instantiate(_factory, _anchor);
+            if (_location.GetComponent<PathHolder>())
+            {
+                print(_location.GetComponent<PathHolder>().path);
+            }
+            _factory.Spawner.path = _location.GetComponent<PathHolder>().path;
+            DeleteLocation();
         }
-        _factory.Spawner.path = _location.GetComponent<PathHolder>().path;
-        DeleteLocation();
     }
 
     public void DeleteLocation()

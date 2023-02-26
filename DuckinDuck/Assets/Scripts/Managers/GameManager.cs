@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int Monnaie = 0;
-    private int Couronne = 0;
-    private int Majordome = 0;
+    private int Monnaie = 250;
+    private int Couronne = 250;
+    private int Majordome = 250;
     private int Fame = 0;
 
     private List<FactoryBase> factoryList = new List<FactoryBase>();
@@ -199,6 +199,41 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         fameTimer.Update();
+    }
+
+    public bool CanAfford(FactoryTypeList type)
+    {
+        switch (type)
+        {
+            case FactoryTypeList.Bank:
+                if (Monnaie >= 200)
+                {
+                    Monnaie -= 200;
+                    return true;
+                }
+
+                return false;
+
+            case FactoryTypeList.Hostel:
+                if (Majordome >= 200)
+                {
+                    Majordome -= 200;
+                    return true;
+                }
+
+                return false;
+
+            case FactoryTypeList.Forge:
+                if (Couronne >= 200)
+                {
+                    Couronne -= 200;
+                    return true;
+                }
+
+                return false;
+        }
+
+        return false;
     }
 }
 
