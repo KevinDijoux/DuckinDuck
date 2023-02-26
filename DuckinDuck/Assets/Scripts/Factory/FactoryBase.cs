@@ -4,15 +4,25 @@ using Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum FactoryTypeList
+{
+    Bank,
+    Forge,
+    Hostel,
+    None
+}
+
+
 public class FactoryBase : MonoBehaviour, IFactory
 {
     public string factoryName { get; set; }
     public Ressource ressource { get; set; }
     public float cooldown { get; set; }
     public int quantity { get; set; }
-    public Image factorySprite { get; set; }
+    public Sprite factorySprite { get; set; }
     public int level { get; set; }
     public Timer timer { get; set; }
+    public FactoryTypeList type { get; set; }
 
     protected bool isWorking = true;
 
@@ -26,12 +36,14 @@ public class FactoryBase : MonoBehaviour, IFactory
         quantity = assets.productionAmount;
         factorySprite = assets.menuImage;
         level = assets.level;
+        type = assets.type;
 
         if (isWorking)
         {
-            if (ressource != Ressource.None)
+            if (ressource != Ressource.None && type != FactoryTypeList.None)
             {
                 GameManager.Instance.AddFactory(this);
+                GameManager.Instance.AddToSpecificFactoryList(type, this);
                 timer = new Timer(cooldown, false);
                 timer.OnEndCallback += HandleEndCallback;
                 timer.Start();
@@ -78,6 +90,11 @@ public class FactoryBase : MonoBehaviour, IFactory
         return factoryName;
     }
 
+    public FactoryTypeList GetFactoryType()
+    {
+        return type;
+    }
+
     public Ressource GetRessource()
     {
         return ressource;
@@ -93,7 +110,7 @@ public class FactoryBase : MonoBehaviour, IFactory
         return quantity;
     }
 
-    public Image GetImage()
+    public Sprite GetImage()
     {
         return factorySprite;
     }
@@ -104,7 +121,7 @@ public class FactoryBase : MonoBehaviour, IFactory
     }
     
 
-    private int GetProductionAmount()
+    public int GetProductionAmount()
     {
         return Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(quantity, level)));
     }
@@ -132,7 +149,7 @@ public class FactoryBase : MonoBehaviour, IFactory
         return this.quantity = quantity;
     }
 
-    public Image SetImage(Image image)
+    public Sprite SetImage(Sprite image)
     {
         return factorySprite = image;
     }

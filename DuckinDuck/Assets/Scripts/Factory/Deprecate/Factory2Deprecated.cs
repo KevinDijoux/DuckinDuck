@@ -14,7 +14,7 @@ public class Factory2Deprecated : MonoBehaviour
     private float productionTime = 0;
     private int amountProduced = 5;
     private Timer _timer = null;
-    private Image sprite = null;
+    private Sprite sprite = null;
     private int level = 1;
 
     private void OnEnable()
@@ -83,7 +83,7 @@ public class Factory2Deprecated : MonoBehaviour
         return name;
     }
 
-    public Image GetSprite()
+    public Sprite GetSprite()
     {
         return sprite;
     }

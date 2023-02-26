@@ -20,3 +20,4 @@ MonoBehaviour:
   level: 1
   menuImage: {fileID: 0}
   isSupposeToWork: 1
+  type: 0

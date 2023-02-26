@@ -13,7 +13,8 @@ public class FactoryScriptableObject : ScriptableObject
     [SerializeField] public float recipeTime = 1f;
     [SerializeField] public Factory2Deprecated _prefab;
     [SerializeField] public int level = 1;
-    [SerializeField] public Image menuImage;
+    [SerializeField] public Sprite menuImage;
     [SerializeField] public bool isSupposeToWork = true;
+    [SerializeField] public FactoryTypeList type = FactoryTypeList.None;
 
 }

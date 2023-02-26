@@ -1,3 +1,5 @@
+using Factory.FactoryType;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEditor.FilePathAttribute;
@@ -6,13 +8,13 @@ using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 public class Selector : MonoBehaviour
 {
 
-    public GameObject towerHUD;
-    public GameObject usineHUD;
-    [SerializeField] LayerMask interactibleLayer;
     private HUDWhenSelect HUDSelect;
     private bool isMouseOnUI;
     [SerializeField] private Transform anchor = null;
     private GameObject location = null;
+
+    private FactoryBase factory;
+
     public bool IsMouseOnUI => isMouseOnUI;
 
     public void Select()
@@ -36,13 +38,22 @@ public class Selector : MonoBehaviour
 
             if (hit.transform.GetComponent<HUDWhenSelect>())
             {
-
+                
                 HUDSelect = hit.transform.gameObject.GetComponent<HUDWhenSelect>();
                 anchor = hit.transform.gameObject.GetComponent<HUDWhenSelect>().transform;
                 location = hit.transform.gameObject.GetComponent<HUDWhenSelect>().gameObject;
 
                 GameManager.Instance.UIManager.SetAnchor(anchor);
                 GameManager.Instance.UIManager.SetLocation(location);
+
+                if(hit.transform.gameObject.TryGetComponent<Hostel>(out Hostel hostel))
+                {
+                    factory = hostel;
+                    Debug.Log("ehoooo");
+                } else
+                {
+                    Debug.Log(hostel);
+                }
                 HUDSelect.OnSelect();
 
             }
@@ -67,6 +78,18 @@ public class Selector : MonoBehaviour
         {
             //Debug.Log("OffScreen");
             isMouseOnUI = false;
+        }
+    }
+    
+    public void TryUpgradeClick()
+    {
+        if(factory != null)
+        {
+            factory.TryUpgrading();
+            Debug.Log("Upgrade ta mère");
+        } else
+        {
+            throw new System.Exception("vtff");
         }
     }
 

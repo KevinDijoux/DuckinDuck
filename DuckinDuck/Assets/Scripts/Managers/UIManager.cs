@@ -12,10 +12,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _fameText;
 
     [SerializeField] private GameObject _selectInterface;
+    [SerializeField] private GameObject _overviewInterface;
     [SerializeField] private GameObject _upgradeInterface;
 
-    private GameObject _factory;
-    public GameObject Factory => _factory;
+    private FactoryBase _factory;
+    public FactoryBase Factory => _factory;
 
     private GameObject _location;
     public GameObject Location => _location;
@@ -26,6 +27,7 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         _selectInterface.SetActive(false);
+        _overviewInterface.SetActive(false);
 
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
@@ -36,10 +38,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI(int _monnaie, int _couronne, int _majordome, int _fame)
     {
-        //_monnaieText.text = _monnaie.ToString();
-        //_couronneText.text = _couronne.ToString();
-        //_majordomeText.text = _majordome.ToString();
-        //_fameText.text = _fame.ToString();
+        _monnaieText.text = _monnaie.ToString();
+        _couronneText.text = _couronne.ToString();
+        _majordomeText.text = _majordome.ToString();
+        _fameText.text = _fame.ToString();
     }
 
     public void OpenSelectionHUD()
@@ -52,10 +54,19 @@ public class UIManager : MonoBehaviour
         _selectInterface.SetActive(false);
     }
 
+    public void OpenOverviewHUD()
+    {
+        _overviewInterface.SetActive(true);
+    }
+
+    public void CloseOverviewHUD()
+    {
+        _overviewInterface.SetActive(false);
+    }
+
     public void OpenUpgradeHUD()
     {
         _upgradeInterface.GetComponent<Animator>().SetBool("Entry", true);
-        GameManager.Instance.GetComponent<FactoryBase>().assets = _factory.GetComponent<FactoryBase>().assets;
     }
 
     public void CloseUpgradeHUD()
@@ -73,7 +84,7 @@ public class UIManager : MonoBehaviour
         _anchor = anchor;
     }
 
-    public void ChooseFactory(GameObject factory)
+    public void ChooseFactory(FactoryBase factory)
     {
         _factory = factory;
         CreateFactory();

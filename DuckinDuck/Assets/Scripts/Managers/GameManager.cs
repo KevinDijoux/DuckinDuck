@@ -1,3 +1,5 @@
+using Factory.FactoryType;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,8 +51,11 @@ public class GameManager : MonoBehaviour
     private int Fame = 0;
 
     private List<FactoryBase> factoryList = new List<FactoryBase>();
+    private List<Forge> forgeList = new List<Forge>();
+    private List<Hostel> hostelList = new List<Hostel>();
+    private List<Bank> bankList = new List<Bank>();
 
-    
+
     public void IncrementRessource(Ressource resource, int amount)
     {
         switch (resource)
@@ -103,6 +108,65 @@ public class GameManager : MonoBehaviour
     public void AddFactory(FactoryBase factory)
     {
         factoryList.Add(factory);
+    }
+
+    public void AddToSpecificFactoryList(FactoryTypeList type, FactoryBase factory)
+    {
+        switch(type)
+        {
+            case FactoryTypeList.Bank:
+                bankList.Add((Bank) factory);
+                break;
+
+            case FactoryTypeList.Hostel:
+                hostelList.Add((Hostel)factory);
+                break;
+
+            case FactoryTypeList.Forge:
+                forgeList.Add((Forge) factory);
+                break;
+        }
+    }
+
+    public long GetMaxProdFrom(FactoryTypeList type)
+    {
+        long result = 0;
+        switch (type)
+        {
+            case FactoryTypeList.Bank:
+                if (bankList.Count > 0)
+                {
+                    for (int i = 0; i < bankList.Count; i++)
+                    {
+                        result += bankList[i].GetProductionAmount();
+                    }
+                    return result;
+                }
+                break;
+
+            case FactoryTypeList.Hostel:
+                if (hostelList.Count > 0)
+                {
+                    for (int i = 0; i < hostelList.Count; i++)
+                    {
+                        result += hostelList[i].GetProductionAmount();
+                    }
+                    return result;
+                }
+                break;
+
+            case FactoryTypeList.Forge:
+                if (forgeList.Count > 0)
+                {
+                    for (int i = 0; i < forgeList.Count; i++)
+                    {
+                        result += forgeList[i].GetProductionAmount();
+                    }
+                    return result;
+                }
+                break;
+        }
+        return result;
     }
 
     public FactoryBase GetFactoryByIndex(int index)

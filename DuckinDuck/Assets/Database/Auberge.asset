@@ -17,6 +17,7 @@ MonoBehaviour:
   productionAmount: 3
   recipeTime: 1
   _prefab: {fileID: -6794921149442577429, guid: 133917ecbdce80046b9f9e517ca29b32, type: 3}
-  level: 25
+  level: 1
   menuImage: {fileID: 0}
   isSupposeToWork: 1
+  type: 2

@@ -478,9 +478,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank
       objectReference: {fileID: 0}
+    - target: {fileID: 3421551559620755245, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d84ab53a5b37a04391d7f9669848c33, type: 3}
+    - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8d84ab53a5b37a04391d7f9669848c33, type: 3}
     - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
       propertyPath: _factory
       value: 
+      objectReference: {fileID: 3162808157974833402, guid: 5e18b563c9985eb40ae5b254b38ca036, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseFactory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3162808157974833402, guid: 5e18b563c9985eb40ae5b254b38ca036, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: FactoryBase, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7661679938952375415, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
       propertyPath: m_text
@@ -592,9 +624,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Auberge
       objectReference: {fileID: 0}
+    - target: {fileID: 3421551559620755245, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 089211296cbaa6249b440bf15022f2ac, type: 3}
+    - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 089211296cbaa6249b440bf15022f2ac, type: 3}
     - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
       propertyPath: _factory
       value: 
+      objectReference: {fileID: 3129768757313505467, guid: 133917ecbdce80046b9f9e517ca29b32, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseFactory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3129768757313505467, guid: 133917ecbdce80046b9f9e517ca29b32, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: FactoryBase, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7661679938952375415, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
       propertyPath: m_text
@@ -706,9 +770,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forge
       objectReference: {fileID: 0}
+    - target: {fileID: 3421551559620755245, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d96f60272b1c5db4ea77ee49e1c38dba, type: 3}
+    - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d96f60272b1c5db4ea77ee49e1c38dba, type: 3}
     - target: {fileID: 3602037192008117109, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
       propertyPath: _factory
       value: 
+      objectReference: {fileID: 7227628351799092188, guid: 5bbe093c13786c7489b81390f4e5ab12, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseFactory
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7227628351799092188, guid: 5bbe093c13786c7489b81390f4e5ab12, type: 3}
+    - target: {fileID: 6582295954243916020, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: FactoryBase, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c4d5823b47f3b4ba42ae25ce8127ef, type: 3}

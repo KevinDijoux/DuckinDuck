@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using GSGD1;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Interfaces
@@ -10,15 +11,16 @@ namespace Interfaces
         Ressource ressource { get; set; }
         float cooldown { get; set; }
         int quantity { get; set; }
-        Image factorySprite { get; set; }
+        Sprite factorySprite { get; set; }
         int level { get; set; }
         Timer timer { get; set; }
+        FactoryTypeList type { get; set; }
 
         string GetName();
         Ressource GetRessource();
         float GetCooldown();
         int GetQuantity();
-        Image GetImage();
+        Sprite GetImage();
         int GetLevel();
         
         string SetName(string name);
@@ -26,7 +28,7 @@ namespace Interfaces
         [System.Obsolete("Avoid, it has been decided balance would be around a cooldown of 1 seconds")]
         float SetCooldown(float cooldown);
         int SetQuantity(int quantity);
-        Image SetImage(Image image);
+        Sprite SetImage(Sprite image);
         int IncrementLevel();
 
     }
