@@ -101,7 +101,11 @@ public class UIManager : MonoBehaviour
     public void CreateFactory()
     {
         Instantiate(_factory, _anchor);
-        _factory.Spawner._path = _location.GetComponent<PathHolder>().path;
+        if (_location.GetComponent<PathHolder>())
+        {
+            print(_location.GetComponent<PathHolder>().path);
+        }
+        _factory.Spawner.path = _location.GetComponent<PathHolder>().path;
         DeleteLocation();
     }
 
