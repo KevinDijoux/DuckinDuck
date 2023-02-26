@@ -27,6 +27,7 @@ public class FactoryBase : MonoBehaviour, IFactory
     protected bool isWorking = true;
 
     [SerializeField] public FactoryScriptableObject assets;
+    [SerializeField] private DuckFollower canard;
     
     protected virtual void Start()
     {

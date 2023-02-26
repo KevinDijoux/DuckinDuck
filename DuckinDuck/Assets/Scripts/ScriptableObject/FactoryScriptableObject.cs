@@ -16,5 +16,6 @@ public class FactoryScriptableObject : ScriptableObject
     [SerializeField] public Sprite menuImage;
     [SerializeField] public bool isSupposeToWork = true;
     [SerializeField] public FactoryTypeList type = FactoryTypeList.None;
+    [SerializeField] public DuckFollower canard;
 
 }
