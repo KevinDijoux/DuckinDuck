@@ -126,6 +126,11 @@ public class FactoryBase : MonoBehaviour, IFactory
         return Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(quantity, level)));
     }
 
+    public FactoryScriptableObject GetAssets()
+    {
+        return assets;
+    }
+    
     public string SetName(string name)
     {
         return factoryName = name;
