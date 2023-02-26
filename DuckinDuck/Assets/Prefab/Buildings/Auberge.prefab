@@ -399,17 +399,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 5719
   m_IsSelectable: 1
-  m_SelectedFaces: 04000000
-  m_SelectedEdges:
-  - a: 16
-    b: 17
-  - a: 18
-    b: 16
-  - a: 17
-    b: 19
-  - a: 19
-    b: 18
-  m_SelectedVertices: 10000000110000001200000013000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &2477603531160861019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +436,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3938959182284123969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -496,7 +488,7 @@ MeshCollider:
   m_GameObject: {fileID: 3938959182284123969}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -510,7 +502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196164989604916966}
-  - component: {fileID: -6794921149442577429}
+  - component: {fileID: 3129768757313505467}
   m_Layer: 0
   m_Name: Auberge
   m_TagString: Untagged
@@ -534,7 +526,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6794921149442577429
+--- !u!114 &3129768757313505467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,10 +535,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5564703213355973009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7755afa936020cb4d9d44bd6b2025bff, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b1b0cf6ab5a4033ab9417c6dfe80b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factorySettings: {fileID: 11400000, guid: 62f8163c86c87d448adcf62e5dbcaf5d, type: 2}
+  assets: {fileID: 11400000, guid: 62f8163c86c87d448adcf62e5dbcaf5d, type: 2}
+  isSupposeToWork: 1
 --- !u!1001 &9219819504487164456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,6 +592,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4146ca1fd9006ba4682ec21bf7a4c1d9, type: 2}
@@ -606,8 +603,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Auberge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}
+      propertyPath: m_TagString
+      value: Factory
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}
+--- !u!1 &8300707149896603513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}
+  m_PrefabInstance: {fileID: 9219819504487164456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4216720045519084581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300707149896603513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.716011, y: 7.628005, z: 9.264614}
+  m_Center: {x: 0, y: 3.8140025, z: 0}
+--- !u!114 &8194663196039774987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300707149896603513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d190009efd76a74f8120c219de8c1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8681208904347127235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91baf65e02f77f240aee8c9f62ec237d, type: 3}

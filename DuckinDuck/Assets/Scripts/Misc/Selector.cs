@@ -1,14 +1,18 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEditor.FilePathAttribute;
+using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 
 public class Selector : MonoBehaviour
 {
+
     public GameObject towerHUD;
     public GameObject usineHUD;
     [SerializeField] LayerMask interactibleLayer;
     private HUDWhenSelect HUDSelect;
     private bool isMouseOnUI;
     [SerializeField] private Transform anchor = null;
+    private GameObject location = null;
     public bool IsMouseOnUI => isMouseOnUI;
 
     public void Select()
@@ -27,18 +31,27 @@ public class Selector : MonoBehaviour
             {
                 HUDSelect.OnDeselect();
                 HUDSelect = null;
+                anchor = null;
             }
 
             if (hit.transform.GetComponent<HUDWhenSelect>())
             {
+
                 HUDSelect = hit.transform.gameObject.GetComponent<HUDWhenSelect>();
+                anchor = hit.transform.gameObject.GetComponent<HUDWhenSelect>().transform;
+                location = hit.transform.gameObject.GetComponent<HUDWhenSelect>().gameObject;
+
+                GameManager.Instance.UIManager.SetAnchor(anchor);
+                GameManager.Instance.UIManager.SetLocation(location);
                 HUDSelect.OnSelect();
-            }            
+
+            }
         }
         else if (HUDSelect != null && !isMouseOnUI)
         {
             HUDSelect.OnDeselect();
             HUDSelect = null;
+            anchor = null;
         }
     }
 
@@ -56,4 +69,5 @@ public class Selector : MonoBehaviour
             isMouseOnUI = false;
         }
     }
+
 }

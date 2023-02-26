@@ -1,33 +1,37 @@
 using System;
 using UnityEngine;
 using GSGD1;
+using Interfaces;
 using UnityEngine.UI;
 
-public class Factory : MonoBehaviour
+[System.Obsolete("This class is obsolete, create a new class that inherit from FactoryBase instead !")]
+public class Factory2Deprecated : MonoBehaviour
 {
     [SerializeField] private FactoryScriptableObject factorySettings;
     
     private string name = String.Empty;
     private Ressource ressourceProduced = Ressource.None;
     private float productionTime = 0;
-    private int amountProduced = 0;
+    private int amountProduced = 5;
     private Timer _timer = null;
     private Image sprite = null;
+    private int level = 1;
 
     private void OnEnable()
     {
         name = factorySettings.name;
         ressourceProduced = factorySettings.ressource;
-        productionTime = factorySettings.productionTimer;
+        productionTime = factorySettings.recipeTime;
         amountProduced = factorySettings.productionAmount;
         sprite = factorySettings.menuImage;
+        level = factorySettings.level;
     }
 
     private void Start()
     {
         if (ressourceProduced != Ressource.None)
         {
-            GameManager.Instance.AddFactory(this);
+            //GameManager.Instance.AddFactory(this);
             _timer = new Timer(productionTime, false);
             _timer.OnEndCallback += HandleEndCallback;
             _timer.Start();
@@ -48,7 +52,7 @@ public class Factory : MonoBehaviour
 
     private void HandleEndCallback()
     {
-        GameManager.Instance.IncrementRessource(ressourceProduced, amountProduced);
+        GameManager.Instance.IncrementRessource(ressourceProduced,  Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(amountProduced, level))));
     }
 
     #region RandomBullshitMethod
@@ -66,7 +70,7 @@ public class Factory : MonoBehaviour
 
     public int GetProductionAmount()
     {
-        return amountProduced;
+        return Mathf.CeilToInt(Mathf.Sqrt(Mathf.Pow(amountProduced, level)));
     }
 
     public void SetProductionAmount(int amount)
@@ -87,6 +91,17 @@ public class Factory : MonoBehaviour
     public Ressource GetRessource()
     {
         return ressourceProduced;
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
+    public int IncrementLevel()
+    {
+        level++;
+        return level;
     }
     #endregion
 }

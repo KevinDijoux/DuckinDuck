@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Banque
   ressource: 1
-  productionAmount: 5
-  productionTimer: 2
+  productionAmount: 2
+  recipeTime: 1
   _prefab: {fileID: -6794921149442577429, guid: 5bbe093c13786c7489b81390f4e5ab12, type: 3}
+  level: 1
   menuImage: {fileID: 0}
+  isSupposeToWork: 1
