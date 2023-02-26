@@ -5,7 +5,7 @@ using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 
 public class Selector : MonoBehaviour
 {
-    /*
+
     public GameObject towerHUD;
     public GameObject usineHUD;
     [SerializeField] LayerMask interactibleLayer;
@@ -36,6 +36,7 @@ public class Selector : MonoBehaviour
 
             if (hit.transform.GetComponent<HUDWhenSelect>())
             {
+
                 HUDSelect = hit.transform.gameObject.GetComponent<HUDWhenSelect>();
                 anchor = hit.transform.gameObject.GetComponent<HUDWhenSelect>().transform;
                 location = hit.transform.gameObject.GetComponent<HUDWhenSelect>().gameObject;
@@ -43,7 +44,8 @@ public class Selector : MonoBehaviour
                 GameManager.Instance.UIManager.SetAnchor(anchor);
                 GameManager.Instance.UIManager.SetLocation(location);
                 HUDSelect.OnSelect();
-            }            
+
+            }
         }
         else if (HUDSelect != null && !isMouseOnUI)
         {
@@ -67,5 +69,5 @@ public class Selector : MonoBehaviour
             isMouseOnUI = false;
         }
     }
-    */
+
 }

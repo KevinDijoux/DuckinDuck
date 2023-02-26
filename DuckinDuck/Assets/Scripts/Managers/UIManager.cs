@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _majordomeText;
     [SerializeField] private TextMeshProUGUI _fameText;
 
-    [SerializeField] private GameObject _interface;
+    [SerializeField] private GameObject _selectInterface;
+    [SerializeField] private GameObject _upgradeInterface;
 
     private GameObject _factory;
     public GameObject Factory => _factory;
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        _interface.SetActive(false);
+        _selectInterface.SetActive(false);
 
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
@@ -41,14 +42,24 @@ public class UIManager : MonoBehaviour
         //_fameText.text = _fame.ToString();
     }
 
-    public void OpenHUD()
+    public void OpenSelectionHUD()
     {
-        _interface.SetActive(true);
+        _selectInterface.SetActive(true);
     }
 
-    public void CloseHUD()
+    public void CloseSelectionHUD()
     {
-        _interface.SetActive(false);
+        _selectInterface.SetActive(false);
+    }
+
+    public void OpenUpgradeHUD()
+    {
+        _upgradeInterface.SetActive(true);
+    }
+
+    public void CloseUpgradeHUD()
+    {
+        _upgradeInterface.SetActive(false);
     }
 
     public void SetLocation(GameObject location)
@@ -75,7 +86,8 @@ public class UIManager : MonoBehaviour
 
     public void DeleteLocation()
     {
-        CloseHUD();
+        Debug.Log(_location.name);
+        CloseSelectionHUD();
         _location.GetComponent<MeshRenderer>().enabled = false;
         _location.GetComponent<MeshCollider>().enabled = false;
     }
