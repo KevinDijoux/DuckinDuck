@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6fc6216c5440dd345b8e0c0dfc72e55c
+  - enabled: 1
+    path: Assets/Scenes/RoyalDuck.unity
+    guid: 19f1725c2e4611149891adc18e930636
   m_configObjects: {}

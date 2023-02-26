@@ -157,6 +157,4 @@ public class FactoryBase : MonoBehaviour, IFactory
     {
         return level++;
     }
-    
-
 }

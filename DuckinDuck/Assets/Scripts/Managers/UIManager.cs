@@ -1,3 +1,4 @@
+using Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -76,7 +77,7 @@ public class UIManager : MonoBehaviour
 
     public void Upgrade()
     {
-
+        
         Debug.Log(_factory.GetComponent<FactoryBase>());
 
         //_factory.GetComponent<FactoryBase>().TryUpgrading();
