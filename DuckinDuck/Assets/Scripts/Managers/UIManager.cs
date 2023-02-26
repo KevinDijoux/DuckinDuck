@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         _selectInterface.SetActive(false);
-        _overviewInterface.SetActive(false);
 
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
@@ -57,12 +56,12 @@ public class UIManager : MonoBehaviour
 
     public void OpenOverviewHUD()
     {
-        _overviewInterface.SetActive(true);
+        _overviewInterface.GetComponent<Animator>().SetBool("OpenPanel", true);
     }
 
     public void CloseOverviewHUD()
     {
-        _overviewInterface.SetActive(false);
+        _overviewInterface.GetComponent<Animator>().SetBool("OpenPanel", false);
     }
 
     public void OpenUpgradeHUD()
