@@ -13,8 +13,6 @@ public class Selector : MonoBehaviour
     [SerializeField] private Transform anchor = null;
     private GameObject location = null;
 
-    private FactoryBase factory;
-
     public bool IsMouseOnUI => isMouseOnUI;
 
     public void Select()
@@ -46,14 +44,7 @@ public class Selector : MonoBehaviour
                 GameManager.Instance.UIManager.SetAnchor(anchor);
                 GameManager.Instance.UIManager.SetLocation(location);
 
-                if(hit.transform.gameObject.TryGetComponent<Hostel>(out Hostel hostel))
-                {
-                    factory = hostel;
-                    Debug.Log("ehoooo");
-                } else
-                {
-                    Debug.Log(hostel);
-                }
+
                 HUDSelect.OnSelect();
 
             }
@@ -80,17 +71,4 @@ public class Selector : MonoBehaviour
             isMouseOnUI = false;
         }
     }
-    
-    public void TryUpgradeClick()
-    {
-        if(factory != null)
-        {
-            factory.TryUpgrading();
-            Debug.Log("Upgrade ta mère");
-        } else
-        {
-            throw new System.Exception("vtff");
-        }
-    }
-
 }
