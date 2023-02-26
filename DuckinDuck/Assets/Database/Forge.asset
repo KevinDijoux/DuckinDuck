@@ -21,3 +21,4 @@ MonoBehaviour:
   menuImage: {fileID: 0}
   isSupposeToWork: 1
   type: 1
+  canard: {fileID: 8235821027121117919, guid: 632111a45266042478b60ca43288fcf0, type: 3}

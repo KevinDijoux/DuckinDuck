@@ -17,8 +17,15 @@ public class DuckFollower : MonoBehaviour
 	[SerializeField]
 	private float _distanceThreshold = 0.5f;
 
+	[SerializeField]
+	private float _randomPos = 2.5f;
+
 	[System.NonSerialized]
 	private int _currentPathIndex = 0;
+
+	private Vector3 _nextDestination;
+
+	private bool _grosBool = false;
 
 	public void SetCanMove(bool canMove)
 	{
@@ -44,17 +51,47 @@ public class DuckFollower : MonoBehaviour
 		{
 			return;
 		}
+		if (_grosBool == false)
+		{
+			SetWaypoint(_currentPathIndex);
+			_grosBool = true;
+		}
 
-		Vector3 nextDestination = _path.Waypoints[_currentPathIndex].position;
-
-		if (Vector3.Distance(transform.position, nextDestination) < _distanceThreshold)
+		if (Vector3.Distance(transform.position, _nextDestination) < _distanceThreshold && _currentPathIndex < _path.Waypoints.Count - 1)
 		{
 			_currentPathIndex = _currentPathIndex + 1;
+			SetNewDestination(Vector3.zero);
 			return;
 		}
 
-		MoveTo(nextDestination);
-		LookAt(nextDestination);
+		MoveTo(_nextDestination);
+		LookAt(_nextDestination);
+	}
+	private void SetNewDestination(Vector3 position)
+	{
+		if (position == Vector3.zero)
+		{
+			Vector3 randomizedPosition = Vector3.zero;
+			if (_currentPathIndex != 0 && _currentPathIndex != _path.Waypoints.Count - 1)
+			{
+				randomizedPosition = new Vector3(
+										Random.Range(-_randomPos, _randomPos),
+										0,
+										Random.Range(-_randomPos, _randomPos));
+			}
+
+			_nextDestination = _path.Waypoints[_currentPathIndex].position + randomizedPosition;
+		}
+		else
+		{
+			_nextDestination = position;
+		}
+	}
+	public void SetWaypoint(int indexPath)
+	{
+		_currentPathIndex = indexPath;
+
+		SetNewDestination(Vector3.zero);
 	}
 
 	private void MoveTo(Vector3 position)
