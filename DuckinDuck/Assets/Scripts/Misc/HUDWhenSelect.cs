@@ -22,6 +22,7 @@ public class HUDWhenSelect : MonoBehaviour
         if (gameObject.GetComponent<HUDWhenSelect>().CompareTag("Factory"))
         {
             Debug.Log("Factory");
+            GameManager.Instance.UIManager.OpenUpgradeHUD();
         }
 
     }
@@ -31,5 +32,6 @@ public class HUDWhenSelect : MonoBehaviour
         //Debug.Log("Deselect");
 
         GameManager.Instance.UIManager.CloseSelectionHUD();
+        GameManager.Instance.UIManager.CloseUpgradeHUD();
     }
 }

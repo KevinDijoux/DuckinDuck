@@ -54,12 +54,13 @@ public class UIManager : MonoBehaviour
 
     public void OpenUpgradeHUD()
     {
-        _upgradeInterface.SetActive(true);
+        _upgradeInterface.GetComponent<Animator>().SetBool("Entry", true);
+        GameManager.Instance.GetComponent<FactoryBase>().assets = _factory.GetComponent<FactoryBase>().assets;
     }
 
     public void CloseUpgradeHUD()
     {
-        _upgradeInterface.SetActive(false);
+        _upgradeInterface.GetComponent<Animator>().SetBool("Entry", false);
     }
 
     public void SetLocation(GameObject location)
