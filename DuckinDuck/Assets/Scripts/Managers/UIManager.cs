@@ -74,6 +74,14 @@ public class UIManager : MonoBehaviour
         _upgradeInterface.GetComponent<Animator>().SetBool("Entry", false);
     }
 
+    public void Upgrade()
+    {
+
+        Debug.Log(_factory.GetComponent<FactoryBase>());
+
+        //_factory.GetComponent<FactoryBase>().TryUpgrading();
+    }
+
     public void SetLocation(GameObject location)
     {
         _location = location;

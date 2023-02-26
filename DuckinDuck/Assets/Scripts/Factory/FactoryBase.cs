@@ -120,7 +120,6 @@ public class FactoryBase : MonoBehaviour, IFactory
     {
         return level;
     }
-    
 
     public int GetProductionAmount()
     {
