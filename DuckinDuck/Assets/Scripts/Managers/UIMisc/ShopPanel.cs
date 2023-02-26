@@ -9,7 +9,6 @@ public class ShopPanel : MonoBehaviour
     [SerializeField] private Sprite sprite = null;
     [SerializeField] private TextMeshProUGUI name;
     [SerializeField] private TextMeshProUGUI quantity;
-    [SerializeField] private TextMeshProUGUI ressource;
     [SerializeField] private FactoryBase _factory;
     [SerializeField] private FactoryTypeList type;
 
@@ -17,7 +16,6 @@ public class ShopPanel : MonoBehaviour
     {
         //name.text = _factory.GetName();
         sprite = _factory.GetImage();
-        ressource.text = _factory.GetRessource().ToString();
         quantity.text = String.Format("{0} /s", GameManager.Instance.GetMaxProdFrom(type));
 
     }

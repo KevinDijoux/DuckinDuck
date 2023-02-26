@@ -95,12 +95,12 @@ public class UIManager : MonoBehaviour
     public void ChooseFactory(FactoryBase factory)
     {
         _factory = factory;
-        CreateFactory(_factory.GetFactoryType());
+        CreateFactory();
     }
 
-    public void CreateFactory(FactoryTypeList type)
+    public void CreateFactory()
     {
-        if (GameManager.Instance.CanAfford(type))
+        if (GameManager.Instance.CanAfford(_factory.GetAssets().type))
         {
             Instantiate(_factory, _anchor);
             if (_location.GetComponent<PathHolder>())
@@ -109,6 +109,10 @@ public class UIManager : MonoBehaviour
             }
             _factory.Spawner.path = _location.GetComponent<PathHolder>().path;
             DeleteLocation();
+        }
+        else
+        {
+            CloseSelectionHUD();
         }
     }
 
