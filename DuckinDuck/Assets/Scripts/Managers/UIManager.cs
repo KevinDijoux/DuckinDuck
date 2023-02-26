@@ -2,7 +2,6 @@ using Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -103,10 +102,10 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance.CanAfford(_factory.GetAssets().type))
         {
             Instantiate(_factory, _anchor);
-            if (_location.GetComponent<PathHolder>())
-            {
-                print(_location.GetComponent<PathHolder>().path);
-            }
+            //if (_location.GetComponent<PathHolder>())
+            //{
+            //    print(_location.GetComponent<PathHolder>().path);
+            //}
             _factory.Spawner.path = _location.GetComponent<PathHolder>().path;
             DeleteLocation();
         }

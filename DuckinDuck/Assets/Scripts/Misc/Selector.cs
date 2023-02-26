@@ -1,9 +1,6 @@
-using Factory.FactoryType;
-using Interfaces;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.FilePathAttribute;
-using static UnityEngine.ProBuilder.AutoUnwrapSettings;
+
 
 public class Selector : MonoBehaviour
 {
