@@ -11,11 +11,21 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _majordomeText;
     [SerializeField] private TextMeshProUGUI _fameText;
 
-    [SerializeField] private GameObject _interface;
+    [SerializeField] private GameObject _selectInterface;
+    [SerializeField] private GameObject _upgradeInterface;
+
+    private GameObject _factory;
+    public GameObject Factory => _factory;
+
+    private GameObject _location;
+    public GameObject Location => _location;
+
+    private Transform _anchor;
+    public Transform Anchor => _anchor;
 
     public void Start()
     {
-        _interface.SetActive(false);    
+        _selectInterface.SetActive(false);
 
         // Debug to verify if theres not missing references
         if (_monnaieText == null || _couronneText == null || _majordomeText == null || _fameText == null)
@@ -26,19 +36,59 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUI(int _monnaie, int _couronne, int _majordome, int _fame)
     {
-        _monnaieText.text = _monnaie.ToString();
-        _couronneText.text = _couronne.ToString();
-        _majordomeText.text = _majordome.ToString();
-        _fameText.text = _fame.ToString();
+        //_monnaieText.text = _monnaie.ToString();
+        //_couronneText.text = _couronne.ToString();
+        //_majordomeText.text = _majordome.ToString();
+        //_fameText.text = _fame.ToString();
     }
 
-    public void OpenHUD()
+    public void OpenSelectionHUD()
     {
-        _interface.SetActive(true);
+        _selectInterface.SetActive(true);
     }
 
-    public void CloseHUD()
+    public void CloseSelectionHUD()
     {
-        _interface.SetActive(false);
+        _selectInterface.SetActive(false);
+    }
+
+    public void OpenUpgradeHUD()
+    {
+        _upgradeInterface.SetActive(true);
+    }
+
+    public void CloseUpgradeHUD()
+    {
+        _upgradeInterface.SetActive(false);
+    }
+
+    public void SetLocation(GameObject location)
+    {
+        _location = location;
+    }
+
+    public void SetAnchor(Transform anchor)
+    {
+        _anchor = anchor;
+    }
+
+    public void ChooseFactory(GameObject factory)
+    {
+        _factory = factory;
+        CreateFactory();
+    }
+
+    public void CreateFactory()
+    {
+        Instantiate(_factory, _anchor);
+        DeleteLocation();
+    }
+
+    public void DeleteLocation()
+    {
+        Debug.Log(_location.name);
+        CloseSelectionHUD();
+        _location.GetComponent<MeshRenderer>().enabled = false;
+        _location.GetComponent<MeshCollider>().enabled = false;
     }
 }

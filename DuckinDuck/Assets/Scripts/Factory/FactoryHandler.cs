@@ -1,32 +1,31 @@
+using System;
 using System.Collections.Generic;
+using Interfaces;
 using UnityEngine;
 
 public class FactoryHandler : MonoBehaviour
 {
-
+    /*
     [SerializeField] private GameObject contentBox;
     [SerializeField] private ShopPanel panelPrefab;
+    [SerializeField] private List<ShopPanel> panelList;
+    [SerializeField] private List<Factory> factoryList;
     
-    private List<Factory> factoryList = new List<Factory>();
-    private List<ShopPanel> panelList = new List<ShopPanel>();
-
     public void CallMenu()
     {
+        
         CleanMenu();
-        factoryList.Clear();
-        factoryList = new List<Factory>(GameManager.Instance.GetFullFactoryList());
-        for (int i = 0; i < factoryList.Count; i++)
+        for (int i = 0; i < panelList.Count; i++)
         {
-            Factory tempFactory = factoryList[i];
-            ShopPanel panel = Instantiate(panelPrefab, contentBox.transform);
-            panel.WhenEnabled(
-                tempFactory.GetSprite(), 
+            panelList[i].WhenEnabled(
+                factoryList[i].GetSprite(), 
                 tempFactory.GetName(), 
                 tempFactory.GetRessource().ToString(), 
-                tempFactory.GetProductionAmount());
+                tempFactory.GetProductionAmount(),
+                tempFactory.GetLevel());
             panelList.Add(panel);
         }
-        Debug.Log(factoryList.Count);
+        
     }
 
     private void CleanMenu()
@@ -40,4 +39,5 @@ public class FactoryHandler : MonoBehaviour
             panelList.Clear();
         }
     }
+    */
 }

@@ -13,13 +13,23 @@ public class HUDWhenSelect : MonoBehaviour
     {
         Debug.Log("Select");
 
-        GameManager.Instance.UIManager.OpenHUD();
+        if (gameObject.GetComponent<HUDWhenSelect>().CompareTag("Location"))
+        {
+            Debug.Log("Location");
+            GameManager.Instance.UIManager.OpenSelectionHUD();
+        }
+        
+        if (gameObject.GetComponent<HUDWhenSelect>().CompareTag("Factory"))
+        {
+            Debug.Log("Factory");
+        }
+
     }
 
     public void OnDeselect()
     {
         //Debug.Log("Deselect");
 
-        GameManager.Instance.UIManager.CloseHUD();
+        GameManager.Instance.UIManager.CloseSelectionHUD();
     }
 }
